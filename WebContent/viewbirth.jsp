@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import= "dao.BirthDao" %>
+     <%@ page import= "bean.BirthBean" %>
+      <%@ page import= "java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +13,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<div id ="all-to" class ="container-fluid " style="background: url(pictures/matereg.jpg);">
+<%
+List<BirthBean> list= BirthDao.getAllBirt();
+%>
 
 
 	<div class ="row bg-primary align-items-center" style ="height:70px;">
@@ -28,20 +32,48 @@
 	
 	<div class="col-9">
 			
+<h1>class = "text-center">List of birth</h1>
 
+		<table class ="table table-striped">
+			<thead>
+				<tr>
+					<th>Patent_ID</th>
+					<th>Child_name</th>
+					<th>gender</th>
+					<th>Dob</th>
+					<th>Weight</th>
+					<th>Birth_place </th>
+					<th>father_name</th>
+					<th>Phone No</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for(BirthBean bb:list){ %>
+				<tr>
+					<td><%= bb.getPatent_id() %></td>
+					<td><%= bb.getName_child() %></td>
+					<td><%= bb.getGender() %></td>
+					<td><%= bb.getDob() %></td>
+					<td><%= bb.getWeight() %></td>
+					<td><%= bb.getBirth_place() %></td>
+					<td><%= bb.getFather_name()  %></td>
+					<td><%= bb.getPhone_no() %></td>
+					<td><a href ="birthupdate.jsp?id=<%= bb.getBirth_id() %>">Update</a></td>
+					<td><a href ="DeleteBirth?id=<%= bb.getBirth_id() %>">Delete</a></td>
+					
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
 
-<div class="panel-heading">
-
-</div>
-			<div class="panel-body">
+			
 		
 			
 			</div>
 	
       </div>			
-</div>
-			
-</div>
 
 </body>
 </html>

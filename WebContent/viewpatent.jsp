@@ -46,7 +46,7 @@ List<PatentBean> list= PatentDao.getAllPatent();
 					<th>Phone No</th>
 					<th>Registration Date</th>
 					<th>edit</th>
-					<th>deletee</th>
+					<th>delete</th>
 				</tr>
 			</thead>
 			<tbody>

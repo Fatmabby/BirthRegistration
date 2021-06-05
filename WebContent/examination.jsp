@@ -27,55 +27,56 @@
 		
 		<br/><br/>
 		
+		<div class ="row">
+			<div class ="col-md-4">
+			<label>Examination_ID</label>
+			<input type= "text" class ="form-control"name ="exam_id" required>
+			</div>
+		</div>
 			<div class="row">
 				<div class="col-md-4"> 
-				<label >PatentID</label>
-				<input type="text" class="form-control" name="Patent" placeholder="PatentID" required>
+				<label >Patent_ID</label>
+				<input type="text" class="form-control" name="patent"  required>
 				 </div>
 				 
 				<div class="col-md-4 "> 
 				<label>Pressure</label>
-				<input type="text" class="form-control" name="Pressure" placeholder="Pressure" required> 
+				<input type="text" class="form-control" name="pressure"  required> 
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-4"> 
 				<label>Haemoglobin</label>
-				<input type="text" class="form-control" name="H.B" placeholder="H.B" required>
+				<input type="text" class="form-control" name="Hb" required>
 				 </div>
 				 
 				<div class="col-md-4"> 
-				<label for ="intuptukubwa">Fetal heart rate</label>
-				<input type="text" class="form-control" name="Fhr" placeholder="Fetal heart rate" required> 
+				<label>Funder height</label>
+				<input type="text" class="form-control" name="fh" required> 
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-md-4"> 
-				<label>Fundal height</label>
-				<input type="text" class="form-control" name="fh" placeholder="Fundal height" required>
+				<label>Fetal heart rate</label>
+				<input type="text" class="form-control" name="frh" required>
 				 </div>
 				 
-				<div class="col-md-4"> 
-				<label>contraction</label>
-				<input type="text" class="form-control" name="contraction" placeholder="contraction" required> 
-				</div>
-			
+			 <div class="col-md-4">
+			<label>Blood group:</label> 
+			<select class="form-control" name="Bloodgroup"> <option>--select your Blood group--</option>
+										<option value="0+">O+</option>
+										<option value="O-">O-</option> 
+										<option value="A+">A+</option> 
+										<option value="A-">A-</option> 
+										<option value="B+">B+</option> 
+										<option value="B-">B-</option> 
+										<option value="AB+">AB+</option> 
+										<option value="AB-">AB-</option> 
+			</select>
 			</div>
-			
-			<div class="row">
-			
-				<div class="col-md-4"> 
-				<label>Cervix </label>
-				<input type="text" class="form-control" name="cervix" placeholder="Corvix" required>
-				 </div>
-				 
-				
-
-			
 			</div>
-		
 			
 			
 			<div class="col-md-3 mt-5 ml-5"> 
@@ -87,12 +88,6 @@
 
 	
       </div>
-
-
-
-			
-			
-			
 			
 </div>
 			
