@@ -35,6 +35,7 @@ public class UpdateBirth extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 		
+		int birth_id = Integer.parseInt(request.getParameter("birth_id"));
 		String patent = request.getParameter("patent_id");
 		int patent_id = Integer.parseInt(patent);
 		String name_child = request.getParameter("chld_name");
@@ -55,8 +56,10 @@ public class UpdateBirth extends HttpServlet {
 		bb.setBirth_place(birth_place);
 		bb.setFather_name(father_name);
 		bb.setPhone_no(phone_no);
+		bb.setBirth_id(birth_id);
 		
-		int result =BirthDao.updateBirth(bb);
+		int result = BirthDao.updateBirth(bb);
+		
 		if(result>0) {
 			response.sendRedirect("viewbirth.jsp");
 			

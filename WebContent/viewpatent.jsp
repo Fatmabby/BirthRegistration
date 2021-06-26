@@ -9,58 +9,44 @@
 <%@ include file ="link.jsp" %>
 <meta charset="ISO-8859-1">
 <link href ="news.css" rel ="stylesheet">
-<script  src="https://kit.fontawesome.come/b99e675b6e.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
 <%
 List<PatentBean> list= PatentDao.getAllPatent();
 %>
-	<div class ="row bg-primary align-items-center" style ="height:70px;">
-		<div class ="col-2">
-		<img alt="" src="pictures/h.PNG " style ="height:50px;width:50px;border-radius:50px ">
-		</div>
-		<div class = "col-10 ">
-		<h2 style = "margin-left:100px;color:white; text-align: center">PREGNANT REGISTRATION</h2>
-		</div> 
-	</div>
-	
+	<%@ include file="header.jsp" %>
 <div class="row">
-
-	
-	<div class="col-9" style="margin-left:150px">
+	<%@ include file="sidenav.jsp" %>
+	<div class="col-9">
 			
-
 <h1 class = "text-center">List of Patent</h1>
-
+<input id="input" type="text" placeholder="Search....." >
 		<table class ="table table-striped">
 			<thead>
 				<tr>
-					<th>Fullname</th>
-					<th>Husband name</th>
+					<th>First_name</th>
+					<th>Last_name</th>
 					<th>Address</th>
 					<th>Dob</th>
-					<th>Gravida</th>
-					<th>Operation </th>
-					<th>Blood-group</th>
-					<th>Phone No</th>
-					<th>Registration Date</th>
+					<th>Phone Number</th>
+					<th>Username </th>
+					<th>Password</th>
 					<th>edit</th>
-					<th>delete</th>
+					
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="data">
 				<% for(PatentBean pb:list){ %>
 				<tr>
-					<td><%= pb.getFullname() %></td>
-					<td><%= pb.getHusbandname() %></td>
+					<td><%= pb.getFirst_name() %></td>
+					<td><%= pb.getLast_name() %></td>
 					<td><%= pb.getAddress() %></td>
 					<td><%= pb.getDob() %></td>
-					<td><%= pb.getGravida() %></td>
-					<td><%= pb.getOperation() %></td>
-					<td><%= pb.getBlood_group() %></td>
-					<td><%= pb.getPhone()  %></td>
-					<td><%= pb.getReg_date() %></td>
+					<td><%= pb.getPhone() %></td>
+					<td><%= pb.getUser() %></td>
+					<td><%= pb.getPassword() %></td>
+						<td><a href ="patentupdate.jsp?id=<%= pb.getPatent_id() %>">Update</a></td>
 					
 				</tr>
 				<% } %>
@@ -71,6 +57,15 @@ List<PatentBean> list= PatentDao.getAllPatent();
       </div>			
 </div>
 			
-
+<script>
+$(document).ready(function(){
+  $("#input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#data tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import com.mysql.jdbc.Connection;
 import java.sql.*;
 import java.util.*;
 
+import bean.BirthBean;
 import bean.PatentBean;
 import connection.DbConnection;
 
@@ -13,16 +14,15 @@ public class PatentDao {
 		int result = 0;
 		try {
 			Connection con =DbConnection.getConnection();
-			PreparedStatement ps = con.prepareStatement("insert into pregnantreg(fullname,husbandname,address,dob,gravida,operation,blood_group,phone,reg_date) values(?,?,?,?,?,?,?,?,?)");
-			ps.setString(1, pb.getFullname());
-			ps.setString(2, pb.getHusbandname());
+			PreparedStatement ps = con.prepareStatement("insert into pregnantreg(first_name,last_name,address,dob,phone,user,password) values(?,?,?,?,?,?,?)");
+			ps.setString(1, pb.getFirst_name());
+			ps.setString(2, pb.getLast_name());
 			ps.setString(3, pb.getAddress());
 			ps.setString(4, pb.getDob());
-			ps.setString(5, pb.getGravida());
-			ps.setString(6, pb.getOperation());
-			ps.setString(7, pb.getBlood_group());
-			ps.setString(8, pb.getPhone());
-			ps.setString(9, pb.getReg_date());
+			ps.setString(5, pb.getPhone());
+			ps.setString(6, pb.getUser());
+			ps.setString(7, pb.getPassword());
+		
 			
 			result = ps.executeUpdate();
 			con.close();
@@ -44,16 +44,14 @@ public class PatentDao {
 			 while(rs.next()) {
 				 PatentBean pb = new PatentBean();
 				 pb.setPatent_id(rs.getInt(1));
-				 pb.setFullname(rs.getString(2));
-				 pb.setHusbandname(rs.getString(3));
+				 pb.setFirst_name(rs.getString(2));
+				 pb.setLast_name(rs.getString(3));
 				 pb.setAddress(rs.getString(4));
 				 pb.setDob(rs.getString(5));
-				 pb.setGravida(rs.getString(6));
-				 pb.setOperation(rs.getString(7));
-				 pb.setBlood_group(rs.getString(8));
-				 pb.setPhone(rs.getString(9));
-				 pb.setReg_date(rs.getString(10));
-				 
+				 pb.setPhone(rs.getString(6));
+				 pb.setUser(rs.getString(7));
+				 pb.setPassword(rs.getString(8));
+								 
 				 list.add(pb);
 			 }
 			 con.close();
@@ -61,6 +59,30 @@ public class PatentDao {
 		 
 		 return list;
 		
+	}
+	
+	public static PatentBean getPatentById(int id) {
+		PatentBean pb =new PatentBean();
+		try {
+			Connection con =DbConnection.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from 	pregnantreg where patent_id =?");
+			ps.setInt(1, id);
+			ResultSet rs =ps.executeQuery();
+			
+             while(rs.next()) {
+            	 pb.setPatent_id(rs.getInt(1));
+				 pb.setFirst_name(rs.getString(2));
+				 pb.setLast_name(rs.getString(3));
+				 pb.setAddress(rs.getString(4));
+				 pb.setDob(rs.getString(5));
+				 pb.setPhone(rs.getString(6));
+				 pb.setUser(rs.getString(7));
+				 pb.setPassword(rs.getString(8));
+			 }
+			 con.close();
+			
+		}catch(Exception ex) {ex.printStackTrace();}
+		return pb;
 	}
 	
 }

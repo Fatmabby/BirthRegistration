@@ -11,17 +11,8 @@
 </head>
 <body>
 <form  method ="post" action ="BirthController">
-<div id ="all-to" class ="container-fluid " style="background: url(pictures/chldbirth.jpg);">
 
-
-	<div class ="row bg-primary align-items-center" style ="height:70px;">
-		<div class ="col-2">
-		<img alt="" src="pictures/h.PNG " style ="height:100%;width:50px;border-radius:50px ">
-		</div>
-		<div class = "col-10 ">
-		<h2 style = "margin-left:100px;color:white; text-align: center">BIRTH  REGISTRATION FORM</h2>
-		</div> 
-	</div>
+<%@ include file="header.jsp" %>
 	
 <div class="row">
 <%@ include file="sidenav.jsp" %>
@@ -30,7 +21,8 @@
 		
 		<br/><br/>
 			
-
+		<h3>Child Registration Form</h3>
+		<hr>
 			
 			<div class="row">
 				<div class="col-md-4"> 
@@ -51,10 +43,13 @@
 				<input type="text" class="form-control" name="chld_name" required>
 				 </div>
 				 
-				<div class="col-md-4"> 
+				<div class="col-md-6"> 
 				<label>Gender</label>
-				<input type="text" class="form-control" name="gender"required> 
+				<div class ="col-md-4">
+				<input type="radio"  name="gender" value ="male"required>	Male
+				<input type="radio"  name="gender" value ="female"required>	Female
 				</div>
+			</div>
 			</div>
 			
 				<div class="row">
@@ -73,20 +68,21 @@
 				<div class="col-md-4"> 
 				<label>Birth Place</label>
 				<input type="text" class="form-control" name="place"required>
-				 </div>
-				 	 
-				 <div class="col-md-4"> 
-				<label>Number of birth</label>
-				<select class="form-control" name="Number_birth"> <option>--select your Number of birth--</option>
-				
-				                        <option value="one">1</option>
-										<option value="twins">2</option> 
-										<option value="three">3</option>				
-										<option value="more">4</option>
-										
-										</select>
-				 </div>
+				 </div>	
+				 
+			<div class ="col-md-6">
+			<label>Cervical Condition</label>
+			<div class ="col-md-6">
+			<input type="radio"  name="condition" value ="born_alive"required>	Born alive
+			<input type="radio"  name="condition" value ="born_dead"required>	Born dead
 			</div>
+			</div>
+				 
+			</div>
+			<br>
+			
+			<h3><u>Father Details</u></h3>
+			<hr>
 			
 			<div class="row">
 				 <div class="col-md-4"> 
@@ -94,13 +90,42 @@
 				<input type="text" class="form-control" name="father"required>
 				 </div>
 		
+			<div class="col-md-6"> 
+				<label>Nationality</label>
+				<div class = "col-md-5">
+				<input type ="radio" name ="nation" value = "mstanzania">  Mtanzania
+			    <input type ="radio" name ="nation" value ="others">  Others
+			</div>
+		</div>
+		</div>
+				
+				
+				<div class="row">
+				 <div class="col-md-4"> 
+				<label>Father Works</label>
+				<input type="text" class="form-control" name="fwork"required>
+				 </div>
+		
+			<div class="col-md-4"> 
+				<label>Address</label>
+				<input type="text" class="form-control" name="address" required>
+				 </div>
+			</div>
+			
+			<div class="row">
+				 <div class="col-md-4"> 
+				<label>Place of Birth</label>
+				<input type="text" class="form-control" name="placebirth"required>
+				 </div>
+		
 			<div class="col-md-4"> 
 				<label>Phone Number</label>
 				<input type="text" class="form-control" name="phone" required>
 				 </div>
-			
-			
 			</div>
+			
+			
+			
 				
 			<div class="col-md-3 mt-5 ml-5"> 
 			<button type="submit"  class="btn btn-primary" name="REGISTER">Save</button>
@@ -109,7 +134,7 @@
 			 </div>		
 	</div>	
 	</div>
-	</div>		
+		
 </form>
 </body>
 </html>

@@ -1,8 +1,9 @@
 package bean;
 
+
 public class PatentBean {
 	private int patent_id;
-	private String fullname,husbandname,address,dob,gravida,operation,blood_group,phone,reg_date;
+	private String 	first_name,last_name,address,dob,phone,user,password;
 	
 	public  PatentBean() {
 		
@@ -16,20 +17,20 @@ public class PatentBean {
 		this.patent_id = patent_id;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFirst_name() {
+		return first_name;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
 
-	public String getHusbandname() {
-		return husbandname;
+	public String getLast_name() {
+		return last_name;
 	}
 
-	public void setHusbandname(String husbandname) {
-		this.husbandname = husbandname;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 
 	public String getAddress() {
@@ -44,32 +45,8 @@ public class PatentBean {
 		return dob;
 	}
 
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
-	public String getGravida() {
-		return gravida;
-	}
-
-	public void setGravida(String gravida) {
-		this.gravida = gravida;
-	}
-
-	public String getOperation() {
-		return operation;
-	}
-
-	public void setOperation(String operation) {
-		this.operation = operation;
-	}
-
-	public String getBlood_group() {
-		return blood_group;
-	}
-
-	public void setBlood_group(String blood_group) {
-		this.blood_group = blood_group;
+	public void setDob(String date) {
+		this.dob = date;
 	}
 
 	public String getPhone() {
@@ -80,13 +57,22 @@ public class PatentBean {
 		this.phone = phone;
 	}
 
-	public String getReg_date() {
-		return reg_date;
+	public String getUser() {
+		return user;
 	}
 
-	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
+	public void setUser(String user) {
+		this.user = user;
 	}
 
+	public String getPassword() {
+		return password;
+	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }
+
+	

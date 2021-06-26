@@ -35,26 +35,25 @@ public class PatentController extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 
-		String reg_date = request.getParameter("RegstrationDate");
-		String fullname = request.getParameter("fullname");
-		String husbandname = request.getParameter("husbandname");
+		String first_name = request.getParameter("fname" );
+		String last_name = request.getParameter("lname");
 		String address = request.getParameter("address");
 		String dob = request.getParameter("dob");
-		String gravida = request.getParameter("gravida");
-		String operation = request.getParameter("operation");
-		String blood_group = request.getParameter("Bloodgroup");
-		String phone = request.getParameter("Phone");
+		String phone = request.getParameter("phone");
+		String user = request.getParameter("user");
+		String password = request.getParameter("pass");
+		
 		
 		PatentBean bean = new PatentBean();
-		bean.setReg_date(reg_date);
-		bean.setFullname(fullname);
-		bean.setHusbandname(husbandname);
+		bean.setFirst_name(first_name);
+		bean.setLast_name(last_name);
 		bean.setAddress(address);
 		bean.setDob(dob);
-		bean.setGravida(gravida);
-		bean.setOperation(operation);
-		bean.setBlood_group(blood_group);
 		bean.setPhone(phone);
+		bean.setUser(user);
+		bean.setPassword(password);
+		
+		
 		
 		int  result = PatentDao.savePatent(bean);
 		if(result>0){

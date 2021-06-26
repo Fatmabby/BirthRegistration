@@ -26,15 +26,7 @@ BirthBean  bb =BirthDao.getBirthById(id);
 
 <div id ="all-to" class ="container-fluid " style="background: url(pictures/chldbirth.jpg);">
 
-
-	<div class ="row bg-primary align-items-center" style ="height:70px;">
-		<div class ="col-2">
-		<img alt="" src="pictures/h.PNG " style ="height:100%;width:50px;border-radius:50px ">
-		</div>
-		<div class = "col-10 ">
-		<h2 style = "margin-left:100px;color:white; text-align: center">BIRTH  REGISTRATION FORM</h2>
-		</div> 
-	</div>
+<%@ include file="header.jsp" %>
 	
 <div class="row">
 <%@ include file="sidenav.jsp" %>
@@ -48,7 +40,7 @@ BirthBean  bb =BirthDao.getBirthById(id);
 			<div class="row">
 				<div class="col-md-4"> 
 				<label>Birth ID</label>
-				<input type="text" class="form-control" name="birth" required>
+				<input type="text" class="form-control" name="birth_id" readonly value=<%= bb.getBirth_id() %>>
 				 </div>
 				 
 				<div class="col-md-4 "> 

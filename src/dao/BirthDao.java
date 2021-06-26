@@ -94,21 +94,23 @@ public class BirthDao {
 		int result =0;
 		try {
 			Connection con =DbConnection.getConnection();
-			PreparedStatement ps = con.prepareStatement("update birthform set patent_id=?,name_child=?,	gender=?,dob=?,	weight=?,birth_place=?,father_name=?,phone_no=? where birth_id =?");
-			ps.setInt(1, bb.getPatent_id());
-			ps.setString(2, bb.getName_child());
-			ps.setString(3, bb.getGender());
-			ps.setString(4, bb.getDob());
-			ps.setString(5, bb.getWeight());
-			ps.setString(6, bb.getBirth_place());
-			ps.setString(7, bb.getFather_name());
-			ps.setString(8, bb.getPhone_no());
-			ps.setInt(9, bb.getBirth_id());
+			PreparedStatement ps = con.prepareStatement("update birthform set name_child=?,	gender=?,dob=?,	weight=?,birth_place=?,father_name=?,phone_no=? where birth_id =?");
+
+			ps.setString(1, bb.getName_child());
+			ps.setString(2, bb.getGender());
+			ps.setString(3, bb.getDob());
+			ps.setString(4, bb.getWeight());
+			ps.setString(5, bb.getBirth_place());
+			ps.setString(6, bb.getFather_name());
+			ps.setString(7, bb.getPhone_no());
+			ps.setInt(8, bb.getBirth_id());
+			
 			result = ps.executeUpdate();
 			con.close();
 		}catch(Exception ex){ex.printStackTrace();}
 		return result;
 	}
+	
 	public static int delete(int id) {
 		int status =0;
 		try {

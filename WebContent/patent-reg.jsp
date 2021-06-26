@@ -10,17 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form>
-<div id ="all-to" class ="container-fluid " style="background: url(pictures/matereg.jpg);">
-	
-	<div class ="row bg-primary align-items-center" style ="height:70px;">
-		<div class ="col-2">
-		<img alt="" src="pictures/h.PNG " style ="height:50px;width:50px;border-radius:50px ">
-		</div>
-		<div class = "col-10 ">
-		<h2 style = "margin-left:100px;color:white; text-align: center">PREGNANT REGISTRATION</h2>
-		</div> 
-	</div>
+
+
+<%@ include file="header.jsp" %>
 	
 <div class="row">
 	<%@ include file="sidenav.jsp" %>
@@ -29,7 +21,11 @@
 			
 				<br/><br/>
 		
+			<form method="post" action="PatentController">
 			
+					
+		<h1>Mother Registration Form</h1>
+		<hr>
 			<div class="row">			
 				<div class="col-md-4"> 
 				<label >Patent_ID</label>
@@ -43,7 +39,7 @@
 				 </div>				 			
 			</div>
 						
-				<div class="row">						 
+			<div class="row">						 
 				<div class="col-md-4"> 
 				<label >Last Name</label>
 				<input type="text" class="form-control" name="lname"required> 
@@ -62,7 +58,42 @@
 				</div>
 				<div class="col-md-4">	
 				<label> Phone Number</label>
-				<input type="number"  class ="form-control" name="phone" > 
+				<input type="text"  class ="form-control" name="phone" > 
+				 </div>
+			</div>
+			
+			<div class ="row">
+				<div class ="col-md-4">
+				<label>How many gravida </label>
+				<input type="text" class="form-control" name="gravida" required> 
+				</div>
+			<br>
+			   <div class ="col-md-6">
+			   <label>Delivery way</label>
+			   <div class = "col-md-5">
+			   <input type ="radio" name ="way" value = "normal">Normal
+			    <input type ="radio" name ="way" value ="abnormal">Abnormal
+			   </div>
+			   </div>
+			</div>
+			
+			<div class ="row">
+			<div class ="col-md-4">
+			<label>Are you mariage</label>
+			<input type ="radio" name ="marige" value = "yes">Yes
+			 <input type ="radio" name ="marige" value ="no">No
+			</div>
+						
+				 <div class="col-md-4"> 
+				<label>Number of birth</label>
+				<select class="form-control" name="Number_birth"> <option>--select your Number of birth--</option>
+				
+				                        <option value="one">1</option>
+										<option value="twins">2</option> 
+										<option value="three">3</option>				
+										<option value="more">4</option>
+										
+										</select>
 				 </div>
 			</div>
 				
@@ -83,13 +114,12 @@
 		    <div class="col-md-3 mt-5 ml-5"> 
 			<button type="submit"  class="btn btn-primary s">Save</button>
 			<button type="reset"  class="btn btn-primary">Reset</button>	
-			 </div>
-	
+			</div>
+	 </form>
     	</div>
  
      </div>	
       	
 </div>
- </form>
 </body>
 </html>
