@@ -42,8 +42,14 @@ public class UpdateBirth extends HttpServlet {
 		String name_gender = request.getParameter("gender");
 		String dob = request.getParameter("dob");
 		String weightr = request.getParameter("weght");
+		String time = request.getParameter("time");
 		String birth_place = request.getParameter("place");
+		String condition = request.getParameter("condition");
 		String father_name = request.getParameter("father");
+		String nationality = request.getParameter("nation");
+		String fwork = request.getParameter("fwork");
+		String address =request.getParameter("address");
+		String place_birth = request.getParameter("placebirth");
 		String phone_no = request.getParameter("phone");
 		
 		BirthBean bb = new BirthBean();
@@ -53,8 +59,14 @@ public class UpdateBirth extends HttpServlet {
 		bb.setGender(name_gender);
 		bb.setDob(dob);
 		bb.setWeight(weightr);
+		bb.setTime(time);
 		bb.setBirth_place(birth_place);
+		bb.setCondition(condition);
 		bb.setFather_name(father_name);
+		bb.setNationality(nationality);
+		bb.setFwork(fwork);
+		bb.setAddress(address);
+		bb.setPlace_birth(place_birth);
 		bb.setPhone_no(phone_no);
 		bb.setBirth_id(birth_id);
 		

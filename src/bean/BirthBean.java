@@ -2,7 +2,7 @@ package bean;
 
 public class BirthBean {
 	private int birth_id,patent_id;
-	private String name_child,gender,dob,weight,birth_place, father_name,phone_no;
+	private String name_child,gender,dob,weight,time,birth_place,cervical, father_name,nationality,fwork,address,place_birth,phone_no;
 	
 	public  BirthBean() {
 		
@@ -56,6 +56,14 @@ public class BirthBean {
 		this.weight = weight;
 	}
 
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public String getBirth_place() {
 		return birth_place;
 	}
@@ -64,7 +72,15 @@ public class BirthBean {
 		this.birth_place = birth_place;
 	}
 
+	
 
+	public String getCervical() {
+		return cervical;
+	}
+
+	public void setCervical(String cervical) {
+		this.cervical = cervical;
+	}
 
 	public String getFather_name() {
 		return father_name;
@@ -72,6 +88,38 @@ public class BirthBean {
 
 	public void setFather_name(String father_name) {
 		this.father_name = father_name;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getFwork() {
+		return fwork;
+	}
+
+	public void setFwork(String fwork) {
+		this.fwork = fwork;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPlace_birth() {
+		return place_birth;
+	}
+
+	public void setPlace_birth(String place_birth) {
+		this.place_birth = place_birth;
 	}
 
 	public String getPhone_no() {
@@ -82,4 +130,5 @@ public class BirthBean {
 		this.phone_no = phone_no;
 	}
 
+	
 }

@@ -3,7 +3,7 @@ package bean;
 
 public class PatentBean {
 	private int patent_id;
-	private String 	first_name,last_name,address,dob,phone,user,password;
+	private String 	first_name,last_name,address,nationality,dob,phone,	gravida,number_birth,delivery_way,maride,user,password;
 	
 	public  PatentBean() {
 		
@@ -41,12 +41,20 @@ public class PatentBean {
 		this.address = address;
 	}
 
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
 	public String getDob() {
 		return dob;
 	}
 
-	public void setDob(String date) {
-		this.dob = date;
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 
 	public String getPhone() {
@@ -55,6 +63,38 @@ public class PatentBean {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getGravida() {
+		return gravida;
+	}
+
+	public void setGravida(String gravida) {
+		this.gravida = gravida;
+	}
+
+	public String getNumber_birth() {
+		return number_birth;
+	}
+
+	public void setNumber_birth(String number_birth) {
+		this.number_birth = number_birth;
+	}
+
+	public String getDelivery_way() {
+		return delivery_way;
+	}
+
+	public void setDelivery_way(String delivery_way) {
+		this.delivery_way = delivery_way;
+	}
+
+	public String getMaride() {
+		return maride;
+	}
+
+	public void setMaride(String maride) {
+		this.maride = maride;
 	}
 
 	public String getUser() {
@@ -72,6 +112,7 @@ public class PatentBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	
 }
 

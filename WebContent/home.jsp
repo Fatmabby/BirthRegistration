@@ -12,7 +12,7 @@
 <div id ="all-to" class ="container-fluid " style="background: url(pictures/chldbirth.jpg);">
 <%@ include file="header.jsp" %>
 	
-<div class="row">
+<div class="row"style="padding-top: 70px">
 <%@ include file="sidenav.jsp" %>
 
 <div class="col-9 ">

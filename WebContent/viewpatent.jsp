@@ -16,7 +16,7 @@
 List<PatentBean> list= PatentDao.getAllPatent();
 %>
 	<%@ include file="header.jsp" %>
-<div class="row">
+<div class="row" style="padding-top: 70px">
 	<%@ include file="sidenav.jsp" %>
 	<div class="col-9">
 			
@@ -25,11 +25,18 @@ List<PatentBean> list= PatentDao.getAllPatent();
 		<table class ="table table-striped">
 			<thead>
 				<tr>
+					<th>SN</th>
+					<th>Patent_ID</th>
 					<th>First_name</th>
 					<th>Last_name</th>
 					<th>Address</th>
+					<th>Nationality</th>
 					<th>Dob</th>
 					<th>Phone Number</th>
+					<th>Gravida info</th>
+					<th>Number_birth</th>
+					<th>Delivery_way</th>
+					<th>Married</th>
 					<th>Username </th>
 					<th>Password</th>
 					<th>edit</th>
@@ -37,13 +44,23 @@ List<PatentBean> list= PatentDao.getAllPatent();
 				</tr>
 			</thead>
 			<tbody id="data">
-				<% for(PatentBean pb:list){ %>
+				<% 
+					int i=1;
+					for(PatentBean pb:list){ 
+				%>
 				<tr>
+				    <td><%= i %><% i++; %></td>
+				    <td><%= pb.getPatent_id() %></td>
 					<td><%= pb.getFirst_name() %></td>
 					<td><%= pb.getLast_name() %></td>
 					<td><%= pb.getAddress() %></td>
+					<td><%= pb.getNationality() %></td>
 					<td><%= pb.getDob() %></td>
 					<td><%= pb.getPhone() %></td>
+					<td><%= pb.getGravida() %></td>
+					<td><%= pb.getNumber_birth() %></td>
+					<td><%= pb.getDelivery_way() %></td>
+					<td><%= pb.getMaride()%></td>
 					<td><%= pb.getUser() %></td>
 					<td><%= pb.getPassword() %></td>
 						<td><a href ="patentupdate.jsp?id=<%= pb.getPatent_id() %>">Update</a></td>

@@ -4,7 +4,7 @@ import com.mysql.jdbc.Connection;
 import java.sql.*;
 import java.util.*;
 
-import bean.BirthBean;
+
 import bean.PatentBean;
 import connection.DbConnection;
 
@@ -14,14 +14,19 @@ public class PatentDao {
 		int result = 0;
 		try {
 			Connection con =DbConnection.getConnection();
-			PreparedStatement ps = con.prepareStatement("insert into pregnantreg(first_name,last_name,address,dob,phone,user,password) values(?,?,?,?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("insert into pregnantreg(first_name,last_name,address,nationality,dob,phone,gravida,number_birth,delivery_way,maride,user,password) values(?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1, pb.getFirst_name());
 			ps.setString(2, pb.getLast_name());
 			ps.setString(3, pb.getAddress());
-			ps.setString(4, pb.getDob());
-			ps.setString(5, pb.getPhone());
-			ps.setString(6, pb.getUser());
-			ps.setString(7, pb.getPassword());
+			ps.setString(4, pb.getNationality());
+			ps.setString(5, pb.getDob());
+			ps.setString(6, pb.getPhone());
+			ps.setString(7, pb.getGravida());
+			ps.setString(8, pb.getNumber_birth());
+			ps.setString(9, pb.getDelivery_way());
+			ps.setString(10, pb.getMaride());
+			ps.setString(11, pb.getUser());
+			ps.setString(12, pb.getPassword());
 		
 			
 			result = ps.executeUpdate();
@@ -47,10 +52,15 @@ public class PatentDao {
 				 pb.setFirst_name(rs.getString(2));
 				 pb.setLast_name(rs.getString(3));
 				 pb.setAddress(rs.getString(4));
-				 pb.setDob(rs.getString(5));
-				 pb.setPhone(rs.getString(6));
-				 pb.setUser(rs.getString(7));
-				 pb.setPassword(rs.getString(8));
+				 pb.setNationality(rs.getString(5));
+				 pb.setDob(rs.getString(6));
+				 pb.setPhone(rs.getString(7));
+				 pb.setGravida(rs.getString(8));
+				 pb.setNumber_birth(rs.getString(9));
+				 pb.setDelivery_way(rs.getString(10));
+				 pb.setMaride(rs.getString(11));
+				 pb.setUser(rs.getString(12));
+				 pb.setPassword(rs.getString(13));
 								 
 				 list.add(pb);
 			 }
@@ -74,10 +84,15 @@ public class PatentDao {
 				 pb.setFirst_name(rs.getString(2));
 				 pb.setLast_name(rs.getString(3));
 				 pb.setAddress(rs.getString(4));
+				 pb.setNationality(rs.getString(5));
 				 pb.setDob(rs.getString(5));
 				 pb.setPhone(rs.getString(6));
-				 pb.setUser(rs.getString(7));
-				 pb.setPassword(rs.getString(8));
+				 pb.setGravida(rs.getString(7));
+				 pb.setNumber_birth(rs.getString(8));
+				 pb.setDelivery_way(rs.getString(9));
+				 pb.setMaride(rs.getString(10));
+				 pb.setUser(rs.getString(11));
+				 pb.setPassword(rs.getString(12));
 			 }
 			 con.close();
 			

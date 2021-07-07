@@ -69,6 +69,27 @@ PatentBean  pb =PatentDao.getPatentById(id);
 				<input type="text"  class ="form-control" name="phone"  value ="<%= pb.getPhone() %>" required > 
 				 </div>
 			</div>
+			
+				
+		<div class ="row" >
+			<div class ="col-md-6">
+			   <label>Delivery way</label>
+			   <div class = "col-md-5">
+			   <input type ="radio" name ="way" value = "normal">Normal
+			    <input type ="radio" name ="way" value ="abnormal">Abnormal
+			   </div>
+			   </div>
+			
+			<div class ="col-md-4">
+			<label>Are you married</label>
+			<div class ="col-md-5">
+			<input type ="radio" name ="maridee" value = "yes">Yes
+			 <input type ="radio" name ="maride" value ="no">No
+			</div>
+			</div>	
+			
+			 
+		</div>
 				
 		<div class="row">			 		 				 
 				<div class="col-md-4"> 

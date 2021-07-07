@@ -38,8 +38,13 @@ public class PatentController extends HttpServlet {
 		String first_name = request.getParameter("fname" );
 		String last_name = request.getParameter("lname");
 		String address = request.getParameter("address");
+		String nationality =request.getParameter("nation");
 		String dob = request.getParameter("dob");
 		String phone = request.getParameter("phone");
+		String gravida = request.getParameter("gravida");
+		String number_birth = request.getParameter("number_birth");
+		String delivery_way = request.getParameter("way");
+		String maride = request.getParameter("maride");
 		String user = request.getParameter("user");
 		String password = request.getParameter("pass");
 		
@@ -48,8 +53,13 @@ public class PatentController extends HttpServlet {
 		bean.setFirst_name(first_name);
 		bean.setLast_name(last_name);
 		bean.setAddress(address);
+		bean.setNationality(nationality);
 		bean.setDob(dob);
 		bean.setPhone(phone);
+		bean.setGravida(gravida);
+		bean.setNumber_birth(number_birth);
+		bean.setDelivery_way(delivery_way);
+		bean.setMaride(maride);
 		bean.setUser(user);
 		bean.setPassword(password);
 		

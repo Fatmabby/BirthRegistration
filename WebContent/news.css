@@ -66,7 +66,7 @@ a:link {
 	background: blue;
 	
 }
-..wrapper.sidebar ul li:hover a{
+.wrapper.sidebar ul li:hover a{
 	color:#fff;
 }
 	

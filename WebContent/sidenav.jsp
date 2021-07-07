@@ -1,5 +1,5 @@
 <div class="col-3">
-	<div class ="container- fluid">
+	<div class ="">
 	<div class ="wrapper">
 	<div class ="sidebar bg-d">
 	<h2 class="text-white">Sidebar</h2>

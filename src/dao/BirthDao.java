@@ -16,15 +16,21 @@ public class BirthDao {
 		int result = 0;
 		try {
 			Connection con =DbConnection.getConnection();
-			PreparedStatement ps = con.prepareStatement("insert into birthform(patent_id,name_child,gender,dob,weight,birth_place, father_name,phone_no) values(?,?,?,?,?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("insert into birthform(patent_id,name_child,gender,dob,weight,time,birth_place,cervical,father_name,nationality,fwork,address,place_birth,phone_no) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setInt(1, bb.getPatent_id());
 			ps.setString(2, bb.getName_child());
 			ps.setString(3, bb.getGender());
 			ps.setString(4, bb.getDob());
 			ps.setString(5, bb.getWeight());
-			ps.setString(6, bb.getBirth_place());
-			ps.setString(7, bb.getFather_name());
-			ps.setString(8, bb.getPhone_no());
+			ps.setString(6, bb.getTime());
+			ps.setString(7, bb.getBirth_place());
+			ps.setString(8, bb.getCervical());
+			ps.setString(9, bb.getFather_name());
+			ps.setString(10, bb.getNationality());
+			ps.setString(11, bb.getFwork());
+			ps.setString(12, bb.getAddress());
+			ps.setString(13, bb.getPlace_birth());
+			ps.setString(14, bb.getPhone_no());
 			
 			result = ps.executeUpdate();
 			con.close();
@@ -50,9 +56,15 @@ public class BirthDao {
 				 bb.setGender(rs.getString(4));
 				 bb.setDob(rs.getString(5));
 				 bb.setWeight(rs.getString(6));
-				 bb.setBirth_place(rs.getString(7));
-				 bb.setFather_name(rs.getString(8));
-				 bb.setPhone_no(rs.getString(9));
+				 bb.setTime(rs.getString(7));
+				 bb.setBirth_place(rs.getString(8));
+				 bb.setCervical(rs.getString(9));
+				 bb.setFather_name(rs.getString(10));
+				 bb.setNationality(rs.getString(11));
+				 bb.setFwork(rs.getString(12));
+				 bb.setAddress(rs.getString(13));
+				 bb.setPlace_birth(rs.getString(14));
+				 bb.setPhone_no(rs.getString(15));
 				 
 				 
 				 list.add(bb);
