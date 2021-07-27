@@ -44,7 +44,7 @@ public class UpdateBirth extends HttpServlet {
 		String weightr = request.getParameter("weght");
 		String time = request.getParameter("time");
 		String birth_place = request.getParameter("place");
-		String condition = request.getParameter("condition");
+		String cervical = request.getParameter("cervical");
 		String father_name = request.getParameter("father");
 		String nationality = request.getParameter("nation");
 		String fwork = request.getParameter("fwork");
@@ -61,7 +61,7 @@ public class UpdateBirth extends HttpServlet {
 		bb.setWeight(weightr);
 		bb.setTime(time);
 		bb.setBirth_place(birth_place);
-		bb.setCondition(condition);
+		bb.setCervical(cervical);
 		bb.setFather_name(father_name);
 		bb.setNationality(nationality);
 		bb.setFwork(fwork);

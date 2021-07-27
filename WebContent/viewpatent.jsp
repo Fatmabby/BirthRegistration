@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import= "dao.PatentDao" %>
      <%@ page import= "bean.PatentBean" %>
-      <%@ page import= "java.util.*" %>
+      <%@ page import= "java.util.*,java.text.*, java.time.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +31,9 @@ List<PatentBean> list= PatentDao.getAllPatent();
 					<th>Last_name</th>
 					<th>Address</th>
 					<th>Nationality</th>
-					<th>Dob</th>
-					<th>Phone Number</th>
-					<th>Gravida info</th>
+					<th>Age</th>
+					<th>Phone </th>
+					<th>Gravida </th>
 					<th>Number_birth</th>
 					<th>Delivery_way</th>
 					<th>Married</th>
@@ -55,7 +55,24 @@ List<PatentBean> list= PatentDao.getAllPatent();
 					<td><%= pb.getLast_name() %></td>
 					<td><%= pb.getAddress() %></td>
 					<td><%= pb.getNationality() %></td>
-					<td><%= pb.getDob() %></td>
+					<td><%
+						String db=pb.getDob();
+					Date date = new SimpleDateFormat("yyyy-MM-dd").parse(db);
+					Calendar c= Calendar.getInstance();
+					c.setTime(date);
+					int year =c.get(Calendar.YEAR);
+					int month =c.get(Calendar.MONTH);
+					int day  =c.get(Calendar.DATE);
+					LocalDate dob =LocalDate.of(year,month,day);
+					LocalDate now =LocalDate.now();
+					Period diff = Period.between(dob, now);
+					int age =diff.getYears();
+					
+					out.print(age);
+					
+					
+					
+					%></td>
 					<td><%= pb.getPhone() %></td>
 					<td><%= pb.getGravida() %></td>
 					<td><%= pb.getNumber_birth() %></td>

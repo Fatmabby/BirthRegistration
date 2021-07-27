@@ -3,3 +3,8 @@
 <link href ="bootstrap/font-awesome/css/font-awesome.css" rel ="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="bootstrap/js/jquery-3.6.0.min.js"></script>
+
+<%
+	session = request.getSession(false);
+	String user = (String)session.getAttribute("user");	
+%>

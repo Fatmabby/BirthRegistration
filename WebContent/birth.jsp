@@ -60,7 +60,7 @@ List<PatentBean> list= PatentDao.getAllPatent();
 				</div>
 				<div class="col-md-6"> 
 				<label > Name of Child</label>
-				<input type="text" class="form-control" name="chld_name" required>
+				<input type="text" class="form-control" name="chld_name">
 				 </div>
 				
 			</div>
@@ -100,7 +100,7 @@ List<PatentBean> list= PatentDao.getAllPatent();
 				 </div>	
 				 
 			<div class ="col-md-6">
-			<label>Cervical Condition</label>
+			<label>Cervical </label>
 			<div class ="col-md-6">
 			<input type="radio"  name="cervical" value ="born_alive"required>	Born alive
 			<input type="radio"  name="cervical" value ="born_dead"required>	Born dead
@@ -161,7 +161,7 @@ List<PatentBean> list= PatentDao.getAllPatent();
 				
 			<div class="col-md-3 mt-5 ml-5"> 
 			<button type="submit"  class="btn btn-primary" name="REGISTER">Save</button>
-			<button type="submit"  class="btn btn-primary" name="REGISTER">Update</button>
+		
 			
 			 </div>		
 	</div>	

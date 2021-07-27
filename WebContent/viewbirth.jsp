@@ -45,6 +45,7 @@ List<BirthBean> list= BirthDao.getAllBirt();
 					<th>Phone No</th>
 					<th>Update</th>
 					<th>Delete</th>
+					<th>Generate certificate</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -71,7 +72,7 @@ List<BirthBean> list= BirthDao.getAllBirt();
 					<td><%= bb.getPhone_no() %></td>
 					<td><a href ="birthupdate.jsp?id=<%= bb.getBirth_id() %>">Update</a></td>
 					<td><a href ="DeleteBirth?id=<%= bb.getBirth_id() %>">Delete</a></td>
-					
+					<td><a href ="certificate.jsp?id=<%= bb.getPatent_id() %>">Generate</a></td>
 				</tr>
 				<% } %>
 			</tbody>
