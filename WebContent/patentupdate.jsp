@@ -20,16 +20,14 @@
 String bid =request.getParameter("id");
 int id = Integer.parseInt(bid);
 PatentBean  pb =PatentDao.getPatentById(id);
-
 %>
 
-<div id ="all-to" class ="container-fluid " style="background: url(pictures/matereg.jpg);">
 <%@ include file="header.jsp" %>
 	
-<div class="row">
+<div class="row" style="padding-top:70px">
 	<%@ include file="sidenav.jsp" %>
 	
-	<div class="col-9">
+	<div class="col-9"> 
 			
 				<br/><br/>
 		
@@ -93,7 +91,7 @@ PatentBean  pb =PatentDao.getPatentById(id);
 				
 		<div class="row">			 		 				 
 				<div class="col-md-4"> 
-				<label>Username</label>
+				<label>User_name</label>
 			<input type="text" class="form-control" name="user"  value ="<%= pb.getUser() %>" required>
 			  </div>
 			  
@@ -113,7 +111,5 @@ PatentBean  pb =PatentDao.getPatentById(id);
     	</div>
  
      </div>	
-      	
-</div>
 </body>
 </html>

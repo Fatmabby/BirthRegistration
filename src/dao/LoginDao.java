@@ -2,6 +2,8 @@ package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.mysql.jdbc.Connection;
 
 import bean.LoginBean;
@@ -17,35 +19,22 @@ public class LoginDao {
 	        return con;
 	    }
 	 
-	 
-	 @SuppressWarnings({ "null", "unlikely-arg-type" })
-	public String userlogin(LoginBean loginbean){
-		 String user = loginbean.getUser();
-		 String pass = loginbean.getPass();
+	public LoginBean userlogin(String user,String pass) throws SQLException {
 		 
-		 String dbuser;
-		 String dbpas;
-
-	        try{
 	            Connection con=LoginDao.getConnection();
 	            PreparedStatement ps=con.prepareStatement("select * from user where username=? and password=?");
 	            ps.setString(1,user);
 	            ps.setString(2,pass);
 	            ResultSet rs=ps.executeQuery();
+	            LoginBean lgbean =null;
 	            if(rs.next()){
-	            	dbuser = rs.getString(1);
-	                dbpas= rs.getString(2);
-	                if(user.equals(dbuser) && pass.equals(dbpas))
-	                {
-	                	
-	                	return "success";
-	                	
-	                }
+	            	lgbean = new LoginBean();
+	            	lgbean.setUser(rs.getString(1));
+	            	lgbean.setPass(rs.getString(2));
+	            	lgbean.setRole(rs.getString(3));
 	            }
-	            con.close();
-	        }catch(Exception e){System.out.print("error");}
-
-	        return "error";
+	            con.close();	        
+	        return lgbean;
 	    }
 	 
 

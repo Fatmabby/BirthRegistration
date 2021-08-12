@@ -28,20 +28,24 @@ CertificateBean bb =CertificateDao.getCertificateById(id);
 <div class="row"  style="padding-top: 70px">
 	<%@ include file="sidenav.jsp" %>
 	
-	<div class="col-9">		
-		<h1 class = "text-center">Birth Certificate</h1>
+	<div class="col-9">	
+	    <h3 class = "text-center">SEREKALI YA MAPINDUZI YA ZANZIBAR</h3>
+	    <h4 class = "text-center">UTHIBITISHO WA TAARIFA YA KIZAZI</h4>	
+		
+		<hr>
 		
 	<div class="row">
 		<div class="col-md-5">
-			<span>CHILD NAME</span>  <span><%= bb.getChild_name() %></span>
+			<span>CHILD NAME</span> <span><%= bb.getChild_name() %></span>
 		</div>
 		<div class="col-md-5">
 			<span>GENDER</span>  <span><%= bb.getGender() %></span>
 		</div>
 	</div>
+	
 	<div class="row">
 		<div class="col-md-5">
-			<span>DATE OF BIRTH</span>  <span><%= bb.getDob() %></span>
+			<span>DATE OF BIRTH</span>  <u><span style="margin-left:10%"><%= bb.getDob() %></span></u>
 		</div>
 		<div class="col-md-5">
 			<span>CERVICAL</span>  <span><%= bb.getCervical() %></span>

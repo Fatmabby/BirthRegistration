@@ -2,7 +2,7 @@ package bean;
 
 public class LoginBean {
 	
-	private String user,pass;
+	private String user,pass,role;
 	
 	public LoginBean() {
 		
@@ -22,5 +22,13 @@ public class LoginBean {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 }
